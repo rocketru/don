@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Author subscribers</h1>
+
+<div id="author_subscribers">
+  <% @author_subscribers.each do |author_subscriber| %>
+    <%= render author_subscriber %>
+    <p>
+      <%= link_to "Show this author subscriber", author_subscriber %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New author subscriber", new_author_subscriber_path %>

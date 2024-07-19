@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Author posts</h1>
+
+<div id="author_posts">
+  <% @author_posts.each do |author_post| %>
+    <%= render author_post %>
+    <% if can? :read, author_post %>
+    <p>
+      <%= link_to "Show this author post", author_post %>
+    </p>
+    <% else %>
+    <p>
+      Get access
+    </p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New author post", new_author_post_path %>
