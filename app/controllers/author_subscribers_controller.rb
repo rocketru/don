@@ -3,20 +3,24 @@ class AuthorSubscribersController < ApplicationController
 
   # GET /author_subscribers or /author_subscribers.json
   def index
+    breadcrumbs.add "AuthorsSubscribers", author_subscribers_path
     @author_subscribers = AuthorSubscriber.all
   end
 
   # GET /author_subscribers/1 or /author_subscribers/1.json
   def show
+    breadcrumbs.add "Show AuthorsSubscribers", author_subscriber_path(@author_subscriber)
   end
 
   # GET /author_subscribers/new
   def new
+    breadcrumbs.add "New AuthorSubscriber", new_author_subscriber_path
     @author_subscriber = AuthorSubscriber.new
   end
 
   # GET /author_subscribers/1/edit
   def edit
+    breadcrumbs.add "Edit AuthorSubscriber", edit_author_subscriber_path
   end
 
   # POST /author_subscribers or /author_subscribers.json
